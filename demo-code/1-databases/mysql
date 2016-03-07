@@ -1,0 +1,12 @@
+#docker server:
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=super-secret mysql
+
+#localhost client:
+mysql --host=$(docker-machine ip) --user=root --password=super-secret
+
+#some commands:
+CREATE DATABASE test;
+SHOW DATABASES;
+USE test
+CREATE TABLE smurf (name VARCHAR(20));
+SHOW TABLES;
